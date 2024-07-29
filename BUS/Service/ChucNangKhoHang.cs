@@ -121,14 +121,18 @@ namespace BUS.Service
  
         private bool KiemTraThongTin(SanPham sanpham) 
         {
-            var list = _repo.GetAll().Where(sp => sp.IdSanPham != sanpham.IdSanPham && (sp.IdGiamGia !=sanpham.IdGiamGia));
+            var list = _repo.GetAll().Where(sp => sp.IdSanPham != sanpham.IdSanPham);
             if(sanpham.SoLuong <= 0 || sanpham.Gia <= 0)
             {
                 return false;
             }
             foreach(var sp in list)
             {
-                if (sp.Equals(sanpham))
+                if ((sp.TenSanPham.Equals(sanpham.TenSanPham) && sp.IdHang.Equals(sanpham.IdHang)&&
+                    sp.MoTa.Equals(sanpham.MoTa) && sp.ChatLieu.Equals(sanpham.ChatLieu) &&
+                    sp.KieuGiay.Equals(sanpham.KieuGiay) && sp.MauSac.Equals(sanpham.MauSac) &&
+                    sp.IdGioiTinh.Equals(sanpham.IdGioiTinh) && sp.KichCo.Equals(sanpham.KichCo)&&
+                    sp.Gia.Equals(sanpham.Gia)) || (sp.Barcode.Equals(sanpham.Barcode)) )
                 {
                     return false;
                 }
@@ -144,7 +148,11 @@ namespace BUS.Service
             }
             foreach(var sp in list)
             {
-                if (sp.Equals(sanpham))
+                if ((sp.TenSanPham.Equals(sanpham.TenSanPham) && sp.IdHang.Equals(sanpham.IdHang) &&
+                    sp.MoTa.Equals(sanpham.MoTa) && sp.ChatLieu.Equals(sanpham.ChatLieu) &&
+                    sp.KieuGiay.Equals(sanpham.KieuGiay) && sp.MauSac.Equals(sanpham.MauSac) &&
+                    sp.IdGioiTinh.Equals(sanpham.IdGioiTinh) && sp.KichCo.Equals(sanpham.KichCo) &&
+                    sp.Gia.Equals(sanpham.Gia)) || (sp.Barcode.Equals(sanpham.Barcode)))
                 {
                     return false;
                 }
@@ -154,14 +162,6 @@ namespace BUS.Service
 
 
         //tab2
-        public IEnumerable<SanPham> SanPhamGiamGia()
-        {
-            return _repo.Find(sp => sp.IdGiamGia == null);
-        }
-        public IEnumerable<SanPham> SanPhamKoGiamGia()
-        {
-            return _repo.Find(sp => sp.IdGiamGia != null);
-        }
         public IEnumerable<GiamGium> GetAllGiamGia()
         {
             return _repo.GetAllGiamGia().Where(gg => gg.TrangThai == true);
@@ -169,7 +169,15 @@ namespace BUS.Service
 
         public bool UpdateKhuyenMai(int idsanpham, int khuyenmai)
         {
+            if (idsanpham == null || khuyenmai == null)
+            {
+                return false;
+            }
             SanPham sanphamsua = _repo.GetByID(idsanpham);
+            if(sanphamsua == null)
+            {
+                return false;
+            }
             if(sanphamsua.IdGiamGia.Equals(khuyenmai))
             {
                 return false;
@@ -184,24 +192,24 @@ namespace BUS.Service
 
         public bool DeleteKhuyenMai(int idsanpham)
         {
-          SanPham sanphamsua = _repo.GetByID(idsanpham);
-          if(sanphamsua.IdGiamGia is null)
+            if (idsanpham == null)
             {
                 return false;
             }
-          else
+            SanPham sanphamsua = _repo.GetByID(idsanpham);
+            if (sanphamsua == null)
+            {
+                return false;
+            }
+            if (sanphamsua.IdGiamGia == null)
+            {
+                return false;
+            }
+            else
             {
                 sanphamsua.IdGiamGia = null;
                 return _repo.Update(sanphamsua);
             }
-        }
-
-        public string TinhGiaGiam(int idsanpham)
-        {
-            var sanpham = _repo.GetByID(idsanpham);
-            var phantram = sanpham.IdGiamGiaNavigation.MucGiamGia / 100;
-            string giagiam =Convert.ToString( sanpham.Gia * (1 - phantram));
-            return giagiam;
         }
     }
 }

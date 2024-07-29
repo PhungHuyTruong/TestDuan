@@ -136,6 +136,9 @@
   <data name="dashboard_panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard-panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="duration_alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\duration-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="file_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +150,9 @@
   </data>
   <data name="nullavar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nullavar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="order_history" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\order-history.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +175,17 @@
   <data name="trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="trash_xmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash-xmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users_alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -1,6 +1,7 @@
 using BUS.IService;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http.Headers;
+using BUS.CurrentHolder;
 
 namespace GUI
 {
@@ -25,6 +26,7 @@ namespace GUI
             var nhanvien = _chucnang.KiemTra(tk, mk);
             if (nhanvien != null)
             {
+                CurrentUser.SetCurrentUser(nhanvien);
                 var mainform = _serviceProvider.GetRequiredService<Mainform>();
                 mainform.Show();
             }

@@ -17,7 +17,9 @@ public partial class GioHangChiTiet
 
     public decimal DonGia { get; set; }
 
-    public decimal? ThanhTien { get; set; }
+    public decimal ThanhTien { get; set; }
+
+    public decimal? GiamGia { get; set; }
 
     public virtual GioHang IdGioHangNavigation { get; set; } = null!;
 

@@ -22,12 +22,9 @@ namespace BUS.IService
 
 
         //tab2
-        IEnumerable<SanPham> SanPhamGiamGia();
-        IEnumerable<SanPham> SanPhamKoGiamGia();
         IEnumerable<GiamGium> GetAllGiamGia();
         bool UpdateKhuyenMai(int idsanpham, int khuyenmai);
         bool DeleteKhuyenMai(int idsanpham);
-
 
     }   
 }

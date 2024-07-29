@@ -19,6 +19,8 @@ public partial class HoaDonChiTiet
 
     public decimal? ThanhTien { get; set; }
 
+    public decimal? GiamGia { get; set; }
+
     public virtual HoaDon IdHoaDonNavigation { get; set; } = null!;
 
     public virtual SanPham IdSanPhamNavigation { get; set; } = null!;

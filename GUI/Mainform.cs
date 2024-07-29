@@ -103,5 +103,10 @@ namespace GUI
         {
 
         }
+        private void btn_formkhachhang_Click(object sender, EventArgs e)
+        {
+            var khachhang = _serviceProvider.GetRequiredService<BangKhachHang>();
+            ShowFormInPanel(khachhang);
+        }
     }
 }

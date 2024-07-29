@@ -29,5 +29,7 @@ public partial class NhanVien
 
     public string Password { get; set; } = null!;
 
+    public bool TrangThai { get; set; }
+
     public virtual ICollection<HoaDon> HoaDons { get; set; } = new List<HoaDon>();
 }

@@ -32,31 +32,34 @@
             showform = new Panel();
             panel2 = new Panel();
             btn_thuoctinh = new Button();
-            panel1 = new Panel();
-            btn_trangchu = new Button();
+            panel6 = new Panel();
+            btn_quanlynguoidung = new Button();
             panel7 = new Panel();
             btn_thongke = new Button();
+            panel1 = new Panel();
+            btn_trangchu = new Button();
             panel5 = new Panel();
             btn_sanpham = new Button();
             panel4 = new Panel();
             btn_banhang = new Button();
-            panel6 = new Panel();
-            btn_quanlynguoidung = new Button();
             panel3 = new Panel();
             btn_menu = new Button();
             menuexpand = new System.Windows.Forms.Timer(components);
             panel8 = new Panel();
             btn_logoff = new Button();
             menubar = new Panel();
+            btn_formkhachhang = new Button();
+            panel9 = new Panel();
             panel2.SuspendLayout();
-            panel1.SuspendLayout();
+            panel6.SuspendLayout();
             panel7.SuspendLayout();
+            panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
-            panel6.SuspendLayout();
             panel3.SuspendLayout();
             panel8.SuspendLayout();
             menubar.SuspendLayout();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // showform
@@ -70,7 +73,7 @@
             // panel2
             // 
             panel2.Controls.Add(btn_thuoctinh);
-            panel2.Location = new Point(0, 433);
+            panel2.Location = new Point(0, 510);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
             panel2.Size = new Size(225, 77);
@@ -90,6 +93,54 @@
             btn_thuoctinh.TextAlign = ContentAlignment.MiddleLeft;
             btn_thuoctinh.UseVisualStyleBackColor = true;
             btn_thuoctinh.Click += btn_thuoctinh_Click;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(btn_quanlynguoidung);
+            panel6.Location = new Point(0, 433);
+            panel6.Margin = new Padding(0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(225, 77);
+            panel6.TabIndex = 0;
+            // 
+            // btn_quanlynguoidung
+            // 
+            btn_quanlynguoidung.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_quanlynguoidung.Image = Properties.Resource.user;
+            btn_quanlynguoidung.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_quanlynguoidung.Location = new Point(-19, -14);
+            btn_quanlynguoidung.Name = "btn_quanlynguoidung";
+            btn_quanlynguoidung.Padding = new Padding(40, 0, 0, 0);
+            btn_quanlynguoidung.Size = new Size(252, 112);
+            btn_quanlynguoidung.TabIndex = 1;
+            btn_quanlynguoidung.Text = "                   QUẢN LÝ \r\n                NGƯỜI DÙNG";
+            btn_quanlynguoidung.TextAlign = ContentAlignment.MiddleLeft;
+            btn_quanlynguoidung.UseVisualStyleBackColor = true;
+            btn_quanlynguoidung.Click += btn_quanlynguoidung_Click;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(btn_thongke);
+            panel7.Location = new Point(0, 587);
+            panel7.Margin = new Padding(0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(225, 77);
+            panel7.TabIndex = 0;
+            // 
+            // btn_thongke
+            // 
+            btn_thongke.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_thongke.Image = Properties.Resource.dashboard_panel;
+            btn_thongke.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_thongke.Location = new Point(-19, -14);
+            btn_thongke.Name = "btn_thongke";
+            btn_thongke.Padding = new Padding(40, 0, 0, 0);
+            btn_thongke.Size = new Size(252, 112);
+            btn_thongke.TabIndex = 1;
+            btn_thongke.Text = "                THỐNG KÊ";
+            btn_thongke.TextAlign = ContentAlignment.MiddleLeft;
+            btn_thongke.UseVisualStyleBackColor = true;
+            btn_thongke.Click += btn_thongke_Click;
             // 
             // panel1
             // 
@@ -114,30 +165,6 @@
             btn_trangchu.TextAlign = ContentAlignment.MiddleLeft;
             btn_trangchu.UseVisualStyleBackColor = true;
             btn_trangchu.Click += btn_trangchu_Click_1;
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(btn_thongke);
-            panel7.Location = new Point(0, 510);
-            panel7.Margin = new Padding(0);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(225, 77);
-            panel7.TabIndex = 0;
-            // 
-            // btn_thongke
-            // 
-            btn_thongke.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_thongke.Image = Properties.Resource.dashboard_panel;
-            btn_thongke.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_thongke.Location = new Point(-19, -14);
-            btn_thongke.Name = "btn_thongke";
-            btn_thongke.Padding = new Padding(40, 0, 0, 0);
-            btn_thongke.Size = new Size(252, 112);
-            btn_thongke.TabIndex = 1;
-            btn_thongke.Text = "                THỐNG KÊ";
-            btn_thongke.TextAlign = ContentAlignment.MiddleLeft;
-            btn_thongke.UseVisualStyleBackColor = true;
-            btn_thongke.Click += btn_thongke_Click;
             // 
             // panel5
             // 
@@ -186,30 +213,6 @@
             btn_banhang.TextAlign = ContentAlignment.MiddleLeft;
             btn_banhang.UseVisualStyleBackColor = true;
             btn_banhang.Click += btn_banhang_Click;
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(btn_quanlynguoidung);
-            panel6.Location = new Point(0, 356);
-            panel6.Margin = new Padding(0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(225, 77);
-            panel6.TabIndex = 0;
-            // 
-            // btn_quanlynguoidung
-            // 
-            btn_quanlynguoidung.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_quanlynguoidung.Image = Properties.Resource.user;
-            btn_quanlynguoidung.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_quanlynguoidung.Location = new Point(-19, -14);
-            btn_quanlynguoidung.Name = "btn_quanlynguoidung";
-            btn_quanlynguoidung.Padding = new Padding(40, 0, 0, 0);
-            btn_quanlynguoidung.Size = new Size(252, 112);
-            btn_quanlynguoidung.TabIndex = 1;
-            btn_quanlynguoidung.Text = "                   QUẢN LÝ \r\n                NGƯỜI DÙNG";
-            btn_quanlynguoidung.TextAlign = ContentAlignment.MiddleLeft;
-            btn_quanlynguoidung.UseVisualStyleBackColor = true;
-            btn_quanlynguoidung.Click += btn_quanlynguoidung_Click;
             // 
             // panel3
             // 
@@ -269,11 +272,12 @@
             menubar.BackColor = Color.White;
             menubar.Controls.Add(panel2);
             menubar.Controls.Add(panel3);
+            menubar.Controls.Add(panel9);
+            menubar.Controls.Add(panel6);
             menubar.Controls.Add(panel1);
             menubar.Controls.Add(panel7);
             menubar.Controls.Add(panel8);
             menubar.Controls.Add(panel5);
-            menubar.Controls.Add(panel6);
             menubar.Controls.Add(panel4);
             menubar.Dock = DockStyle.Left;
             menubar.Location = new Point(0, 0);
@@ -282,6 +286,31 @@
             menubar.Name = "menubar";
             menubar.Size = new Size(81, 1009);
             menubar.TabIndex = 4;
+            // 
+            // btn_formkhachhang
+            // 
+            btn_formkhachhang.BackgroundImageLayout = ImageLayout.None;
+            btn_formkhachhang.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_formkhachhang.Image = Properties.Resource.users_alt;
+            btn_formkhachhang.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_formkhachhang.Location = new Point(-19, -17);
+            btn_formkhachhang.Name = "btn_formkhachhang";
+            btn_formkhachhang.Padding = new Padding(40, 0, 0, 0);
+            btn_formkhachhang.Size = new Size(252, 112);
+            btn_formkhachhang.TabIndex = 2;
+            btn_formkhachhang.Text = "                   QUẢN LÝ \r\n                KHÁCH HÀNG";
+            btn_formkhachhang.TextAlign = ContentAlignment.MiddleLeft;
+            btn_formkhachhang.UseVisualStyleBackColor = true;
+            btn_formkhachhang.Click += btn_formkhachhang_Click;
+            // 
+            // panel9
+            // 
+            panel9.Controls.Add(btn_formkhachhang);
+            panel9.Location = new Point(0, 356);
+            panel9.Margin = new Padding(0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(225, 77);
+            panel9.TabIndex = 0;
             // 
             // Mainform
             // 
@@ -298,14 +327,15 @@
             Text = "Mainform";
             Load += Mainform_Load;
             panel2.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel6.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel8.ResumeLayout(false);
             menubar.ResumeLayout(false);
+            panel9.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -329,5 +359,9 @@
         private Panel panel2;
         private Button btn_trangchu;
         private Button btn_thuoctinh;
+        private Panel panel10;
+        private Button btn_formkhachhang;
+        private Panel panel9;
+        private Button btn_khachhang;
     }
 }

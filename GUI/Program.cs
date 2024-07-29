@@ -41,6 +41,11 @@ namespace GUI
             services.AddScoped<IChucNangNhanVien, ChucNangNhanVien>();
             services.AddScoped<IQuanLyKhoHang, QuanLyKhoHang>();
             services.AddScoped<IChucNangKhoHang, ChucNangKhoHang>();
+            services.AddScoped<IQuanLyGiaoDich, QuanLyGiaoDich>();
+            services.AddScoped<IChucNangGiaoDich,ChucNangGiaoDich>();
+            services.AddScoped<IQuanLyKhachHang, QuanLyKhachHang>();
+            services.AddScoped<IChucNangKhachHang, ChucNangKhachHang>();
+
             // Register forms
             services.AddScoped<Mainform>();
             services.AddTransient<Login>();
@@ -48,6 +53,7 @@ namespace GUI
             services.AddTransient<ThongKe>();
             services.AddTransient<KhoHang>();
             services.AddTransient<GiaoDich>();
+            services.AddTransient<BangKhachHang>();
         }
     }
 }

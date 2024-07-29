@@ -1,6 +1,7 @@
 ﻿using BUS.IService;
 using DAL.Models;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -71,32 +72,33 @@ namespace GUI
         public void LoadDataGrid(IEnumerable<SanPham> data)
         {
             dtg_sanpham.Rows.Clear();
-            dtg_sanpham.ColumnCount = 21;
-            dtg_sanpham.Columns[0].Name = "IdSanPham";
-            dtg_sanpham.Columns[0].Visible = false;
-            dtg_sanpham.Columns[1].Name = "TenSanPham";
-            dtg_sanpham.Columns[2].Name = "Hang";
-            dtg_sanpham.Columns[3].Name = "SoLuong";
-            dtg_sanpham.Columns[4].Name = "MoTa";
-            dtg_sanpham.Columns[5].Name = "ChatLieu";
-            dtg_sanpham.Columns[6].Name = "KieuGiay";
-            dtg_sanpham.Columns[7].Name = "GioiTinh";
-            dtg_sanpham.Columns[8].Name = "KichCo";
-            dtg_sanpham.Columns[9].Name = "MauSac";
-            dtg_sanpham.Columns[10].Name = "Barcode";
-            dtg_sanpham.Columns[11].Name = "Gia";
-            dtg_sanpham.Columns[12].Name = "GiamGia";
-            dtg_sanpham.Columns[13].Name = "ChuongTrinh";
-            dtg_sanpham.Columns[14].Name = "TrangThai";
-            dtg_sanpham.Columns[14].Visible = false;
-            dtg_sanpham.Columns[15].Name = "TenTrangThai";
-            dtg_sanpham.Columns[16].Name = "HinhAnh";
-            dtg_sanpham.Columns[16].Visible = false;
 
-            dtg_sanpham.Columns[17].Name = "IdHang";
-            dtg_sanpham.Columns[18].Name = "IdGioiTInh";
-            dtg_sanpham.Columns[19].Name = "IdKichCo";
-            dtg_sanpham.Columns[20].Name = "IdMauSac";
+            dtg_sanpham.ColumnCount = 21;
+
+            dtg_sanpham.Columns[0].Name = "IdSanPham"; dtg_sanpham.Columns[0].HeaderText = "Mã Sản Phẩm"; dtg_sanpham.Columns[0].Visible = false;
+            dtg_sanpham.Columns[1].Name = "TenSanPham"; dtg_sanpham.Columns[1].HeaderText = "Tên Sản Phẩm";
+            dtg_sanpham.Columns[2].Name = "Hang"; dtg_sanpham.Columns[2].HeaderText = "Hãng";
+            dtg_sanpham.Columns[3].Name = "SoLuong"; dtg_sanpham.Columns[3].HeaderText = "Số Lượng";
+            dtg_sanpham.Columns[4].Name = "MoTa"; dtg_sanpham.Columns[4].HeaderText = "Mô Tả";
+            dtg_sanpham.Columns[5].Name = "ChatLieu"; dtg_sanpham.Columns[5].HeaderText = "Chất Liệu";
+            dtg_sanpham.Columns[6].Name = "KieuGiay"; dtg_sanpham.Columns[6].HeaderText = "Kiểu Giày";
+            dtg_sanpham.Columns[7].Name = "GioiTinh"; dtg_sanpham.Columns[7].HeaderText = "Giới Tính";
+            dtg_sanpham.Columns[8].Name = "KichCo"; dtg_sanpham.Columns[8].HeaderText = "Kích Cỡ";
+            dtg_sanpham.Columns[9].Name = "MauSac"; dtg_sanpham.Columns[9].HeaderText = "Màu Sắc";
+            dtg_sanpham.Columns[10].Name = "Barcode"; dtg_sanpham.Columns[10].HeaderText = "Mã Vạch";
+            dtg_sanpham.Columns[11].Name = "Gia"; dtg_sanpham.Columns[11].HeaderText = "Giá";
+            dtg_sanpham.Columns[12].Name = "GiamGia"; dtg_sanpham.Columns[12].HeaderText = "Giảm Giá";
+            dtg_sanpham.Columns[13].Name = "ChuongTrinh"; dtg_sanpham.Columns[13].HeaderText = "Chương Trình";
+            dtg_sanpham.Columns[14].Name = "TrangThai"; dtg_sanpham.Columns[14].HeaderText = "Trạng Thái"; dtg_sanpham.Columns[14].Visible = false;
+            dtg_sanpham.Columns[15].Name = "TenTrangThai"; dtg_sanpham.Columns[15].HeaderText = "Tên Trạng Thái";
+            dtg_sanpham.Columns[16].Name = "HinhAnh"; dtg_sanpham.Columns[16].HeaderText = "Hình Ảnh"; dtg_sanpham.Columns[16].Visible = false;
+            dtg_sanpham.Columns[17].Name = "IdHang"; dtg_sanpham.Columns[17].HeaderText = "Mã Hãng";
+            dtg_sanpham.Columns[18].Name = "IdGioiTInh"; dtg_sanpham.Columns[18].HeaderText = "Mã Giới Tính";
+            dtg_sanpham.Columns[19].Name = "IdKichCo"; dtg_sanpham.Columns[19].HeaderText = "Mã Kích Cỡ";
+            dtg_sanpham.Columns[20].Name = "IdMauSac"; dtg_sanpham.Columns[20].HeaderText = "Mã Màu Sắc";
+
+
+
             foreach (SanPham sp in data)
             {
                 string tenHang = sp.IdHangNavigation?.TenHang ?? "Null";
@@ -107,28 +109,10 @@ namespace GUI
                 string chuongtrinh = sp.IdGiamGiaNavigation?.LoaiGiamGia ?? "";
                 string trangthai = sp.TrangThai ? "Kinh Doanh" : "Ngừng Kinh Doanh";
 
-                dtg_sanpham.Rows.Add(sp.IdSanPham,
-                                        sp.TenSanPham,
-                                        tenHang,
-                                        sp.SoLuong,
-                                        sp.MoTa,
-                                        sp.ChatLieu,
-                                        sp.KieuGiay,
-                                        tenGioiTinh,
-                                        kichCo,
-                                        mauSac,
-                                        sp.Barcode,
-                                        sp.Gia,
-                                        mucGiamGia,
-                                        chuongtrinh,
-                                        sp.TrangThai,
-                                        trangthai,
-                                        sp.HinhAnh,
-                                        sp.IdHang,
-                                        sp.IdGioiTinh,
-                                        sp.KichCo,
-                                        sp.MauSac
-                                        );
+                dtg_sanpham.Rows.Add(sp.IdSanPham, sp.TenSanPham, tenHang, sp.SoLuong, sp.MoTa, sp.ChatLieu,
+                                     sp.KieuGiay, tenGioiTinh, kichCo, mauSac, sp.Barcode, sp.Gia, mucGiamGia,
+                                     chuongtrinh, sp.TrangThai, trangthai, sp.HinhAnh, sp.IdHang, sp.IdGioiTinh, sp.KichCo, sp.MauSac
+                                     );
             }
         }
         public void LoadDataSPKhuyenMai(IEnumerable<SanPham> data, string filter)
@@ -186,13 +170,15 @@ namespace GUI
         public void LoadDataKhuyenMai(IEnumerable<GiamGium> data)
         {
             dtg_khuyenmai.Rows.Clear();
-            dtg_khuyenmai.ColumnCount = 3;
+            dtg_khuyenmai.ColumnCount = 5;
             dtg_khuyenmai.Columns[0].Name = "ID";
             dtg_khuyenmai.Columns[1].Name = "Ten";
             dtg_khuyenmai.Columns[2].Name = "Giam";
+            dtg_khuyenmai.Columns[3].Name = "TuNgay";
+            dtg_khuyenmai.Columns[4].Name = "DenNgay";
             foreach (GiamGium g in data)
             {
-                dtg_khuyenmai.Rows.Add(g.IdGiamGia, g.LoaiGiamGia, g.MucGiamGia);
+                dtg_khuyenmai.Rows.Add(g.IdGiamGia, g.LoaiGiamGia, g.MucGiamGia, g.NgayBatDau, g.NgayKetThuc);
             }
 
         }
@@ -281,12 +267,12 @@ namespace GUI
             var hinhanh = oldHinhAnh;
             if (_currentpic != null && _currentpic != oldHinhAnh)
             {
-                FileManager.PicManager.DeleteAvatar(oldHinhAnh);
+                FileManager.SPPicManager.DeletePic(oldHinhAnh);
                 hinhanh = _currentpic;
             }
             else if (_currentpic == null && oldHinhAnh != null)
             {
-                FileManager.PicManager.DeleteAvatar(oldHinhAnh);
+                FileManager.SPPicManager.DeletePic(oldHinhAnh);
                 hinhanh = null;
             }
 
@@ -329,6 +315,96 @@ namespace GUI
             _currentpic = null;
         }
 
-      
+        private void dtg_khuyenmai_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowindex = e.RowIndex;
+            var khuyenmaichon = dtg_khuyenmai.Rows[rowindex];
+            var cellvalue = Enumerable.Range(0, khuyenmaichon.Cells.Count).ToDictionary(i => i, i => khuyenmaichon.Cells[i].Value ?? "");
+            if (rowindex >= 0)
+            {
+                string text = txt2_giagoc.Text ?? "0";
+                decimal mucgiam = Convert.ToDecimal(cellvalue[2]);
+                decimal giagoc = decimal.TryParse(text, out giagoc) ? giagoc : 0;
+                var giagiam = giagoc * (1 - mucgiam / 100);
+
+                selectedKhuyenmai = Convert.ToInt32(cellvalue[0]);
+                txt2_chuongtrinh.Text = cellvalue[1].ToString();
+                txt2_mucgiam.Text = cellvalue[2].ToString();
+                txt2_tungay.Text = cellvalue[3].ToString();
+                txt2_denngay.Text = cellvalue[4].ToString();
+                txt2_giagiam.Text = Convert.ToString(giagiam);
+            }
+        }
+
+        private void dtg_sanphamkhuyenmai_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowindex = e.RowIndex;
+            var sanphamchon = dtg_sanphamkhuyenmai.Rows[rowindex];
+            var cellvalue = Enumerable.Range(0, sanphamchon.Cells.Count).ToDictionary(i => i, i => sanphamchon.Cells[i].Value ?? "null");
+            if (rowindex >= 0)
+            {
+                seletedid = Convert.ToInt32(cellvalue[0]);
+                txt2_barcode.Text = cellvalue[4].ToString();
+                txt2_ten.Text = cellvalue[2].ToString();
+                txt2_hang.Text = cellvalue[3].ToString();
+                txt2_mausac.Text = cellvalue[5].ToString();
+                txt2_phai.Text = cellvalue[6].ToString();
+                txt2_kichco.Text = cellvalue[7].ToString();
+                txt2_chuongtrinh.Text = cellvalue[8].ToString();
+                txt2_mucgiam.Text = cellvalue[9].ToString();
+                txt2_tungay.Text = cellvalue[10].ToString();
+                txt2_denngay.Text = cellvalue[11].ToString();
+                txt2_giagoc.Text = cellvalue[12].ToString();
+                txt2_giagiam.Text = cellvalue[13].ToString();
+            }
+        }
+
+        private void btn_capnhat_Click(object sender, EventArgs e)
+        {
+            int idsp = seletedid;
+            int idgg = selectedKhuyenmai;
+            if (!_services.UpdateKhuyenMai(idsp, idgg))
+            {
+                MessageBox.Show("Chua Chon Sp Hoac Khuyen Mai");
+                return;
+            }
+            if (cbb_boolkhuyemai.SelectedValue != null)
+            {
+                string filter = cbb_boolkhuyemai.SelectedValue.ToString();
+                LoadDataSPKhuyenMai(_services.GetAllSanPham(), filter);
+            }
+        }
+
+        private void btn_huykhuyenmai_Click(object sender, EventArgs e)
+        {
+            int idsp = seletedid;
+            if (!_services.DeleteKhuyenMai(idsp))
+            {
+                MessageBox.Show("Chua Chon Sp");
+                return;
+            }
+            if (cbb_boolkhuyemai.SelectedValue != null)
+            {
+                string filter = cbb_boolkhuyemai.SelectedValue.ToString();
+                LoadDataSPKhuyenMai(_services.GetAllSanPham(), filter);
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentpic = null;
+            seletedid = -1;
+            selectedKhuyenmai = -1;
+        }
+
+        private void KhoHang_Load(object sender, EventArgs e)
+        {
+            LoadDataGrid(_services.GetAllSanPham());
+        }
     }
 }

@@ -123,6 +123,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap duration_alt {
+            get {
+                object obj = ResourceManager.GetObject("duration_alt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap file_image {
             get {
                 object obj = ResourceManager.GetObject("file_image", resourceCulture);
@@ -156,6 +166,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap nullavar {
             get {
                 object obj = ResourceManager.GetObject("nullavar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap order_history {
+            get {
+                object obj = ResourceManager.GetObject("order_history", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +253,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap trash_xmark {
+            get {
+                object obj = ResourceManager.GetObject("trash_xmark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap upload {
             get {
                 object obj = ResourceManager.GetObject("upload", resourceCulture);
@@ -256,6 +286,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap user__1_ {
             get {
                 object obj = ResourceManager.GetObject("user__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_alt {
+            get {
+                object obj = ResourceManager.GetObject("users_alt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

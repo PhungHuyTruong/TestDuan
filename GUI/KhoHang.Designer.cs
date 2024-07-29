@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhoHang));
             panel1 = new Panel();
             comboBox2 = new ComboBox();
@@ -54,7 +56,6 @@
             label3 = new Label();
             label2 = new Label();
             label13 = new Label();
-            label1 = new Label();
             txt_tengiamgia = new TextBox();
             txt_mucgiam = new TextBox();
             cbb_kichco = new ComboBox();
@@ -83,18 +84,18 @@
             btn_capnhat = new Button();
             btn_themkhuyenmai = new Button();
             btn_huykhuyenmai = new Button();
-            textBox14 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox11 = new TextBox();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            txt2_denngay = new TextBox();
+            txt2_giagiam = new TextBox();
+            txt2_tungay = new TextBox();
+            txt2_giagoc = new TextBox();
+            txt2_mucgiam = new TextBox();
+            txt2_chuongtrinh = new TextBox();
+            txt2_kichco = new TextBox();
+            txt2_phai = new TextBox();
+            txt2_mausac = new TextBox();
+            txt2_hang = new TextBox();
+            txt2_ten = new TextBox();
+            txt2_barcode = new TextBox();
             label26 = new Label();
             label25 = new Label();
             label24 = new Label();
@@ -161,8 +162,24 @@
             dtg_sanpham.AllowUserToAddRows = false;
             dtg_sanpham.BackgroundColor = Color.FromArgb(244, 243, 243);
             dtg_sanpham.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dtg_sanpham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dtg_sanpham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_sanpham.GridColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 252, 252);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dtg_sanpham.DefaultCellStyle = dataGridViewCellStyle4;
+            dtg_sanpham.GridColor = SystemColors.MenuBar;
             dtg_sanpham.Location = new Point(18, 67);
             dtg_sanpham.Name = "dtg_sanpham";
             dtg_sanpham.RowHeadersVisible = false;
@@ -193,6 +210,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1589, 957);
             tabControl1.TabIndex = 2;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
@@ -226,7 +244,6 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label13);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(txt_tengiamgia);
             panel2.Controls.Add(txt_mucgiam);
             panel2.Controls.Add(cbb_kichco);
@@ -251,6 +268,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(550, 951);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // pt_hinhanh
             // 
@@ -404,20 +422,11 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(191, 286);
+            label13.Location = new Point(17, 286);
             label13.Name = "label13";
             label13.Size = new Size(35, 20);
             label13.TabIndex = 12;
             label13.Text = "Tên:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(14, 286);
-            label1.Name = "label1";
-            label1.Size = new Size(27, 20);
-            label1.TabIndex = 12;
-            label1.Text = "ID:";
             // 
             // txt_tengiamgia
             // 
@@ -515,9 +524,10 @@
             // 
             // txt_ten
             // 
-            txt_ten.Location = new Point(247, 279);
+            txt_ten.BackColor = Color.White;
+            txt_ten.Location = new Point(93, 279);
             txt_ten.Name = "txt_ten";
-            txt_ten.Size = new Size(290, 27);
+            txt_ten.Size = new Size(445, 27);
             txt_ten.TabIndex = 9;
             // 
             // txt_id
@@ -636,6 +646,7 @@
             dtg_sanphamkhuyenmai.RowHeadersWidth = 51;
             dtg_sanphamkhuyenmai.Size = new Size(364, 869);
             dtg_sanphamkhuyenmai.TabIndex = 0;
+            dtg_sanphamkhuyenmai.CellClick += dtg_sanphamkhuyenmai_CellClick;
             // 
             // textBox2
             // 
@@ -650,18 +661,18 @@
             panel3.Controls.Add(btn_capnhat);
             panel3.Controls.Add(btn_themkhuyenmai);
             panel3.Controls.Add(btn_huykhuyenmai);
-            panel3.Controls.Add(textBox14);
-            panel3.Controls.Add(textBox12);
-            panel3.Controls.Add(textBox13);
-            panel3.Controls.Add(textBox11);
-            panel3.Controls.Add(textBox10);
-            panel3.Controls.Add(textBox9);
-            panel3.Controls.Add(textBox8);
-            panel3.Controls.Add(textBox7);
-            panel3.Controls.Add(textBox6);
-            panel3.Controls.Add(textBox5);
-            panel3.Controls.Add(textBox4);
-            panel3.Controls.Add(textBox3);
+            panel3.Controls.Add(txt2_denngay);
+            panel3.Controls.Add(txt2_giagiam);
+            panel3.Controls.Add(txt2_tungay);
+            panel3.Controls.Add(txt2_giagoc);
+            panel3.Controls.Add(txt2_mucgiam);
+            panel3.Controls.Add(txt2_chuongtrinh);
+            panel3.Controls.Add(txt2_kichco);
+            panel3.Controls.Add(txt2_phai);
+            panel3.Controls.Add(txt2_mausac);
+            panel3.Controls.Add(txt2_hang);
+            panel3.Controls.Add(txt2_ten);
+            panel3.Controls.Add(txt2_barcode);
             panel3.Controls.Add(label26);
             panel3.Controls.Add(label25);
             panel3.Controls.Add(label24);
@@ -693,6 +704,7 @@
             btn_capnhat.TabIndex = 5;
             btn_capnhat.Text = "Cập Nhật";
             btn_capnhat.UseVisualStyleBackColor = true;
+            btn_capnhat.Click += btn_capnhat_Click;
             // 
             // btn_themkhuyenmai
             // 
@@ -711,90 +723,115 @@
             btn_huykhuyenmai.TabIndex = 5;
             btn_huykhuyenmai.Text = "Hủy";
             btn_huykhuyenmai.UseVisualStyleBackColor = true;
+            btn_huykhuyenmai.Click += btn_huykhuyenmai_Click;
             // 
-            // textBox14
+            // txt2_denngay
             // 
-            textBox14.Location = new Point(259, 439);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(144, 27);
-            textBox14.TabIndex = 4;
+            txt2_denngay.BackColor = Color.White;
+            txt2_denngay.Location = new Point(259, 439);
+            txt2_denngay.Name = "txt2_denngay";
+            txt2_denngay.ReadOnly = true;
+            txt2_denngay.Size = new Size(144, 27);
+            txt2_denngay.TabIndex = 4;
             // 
-            // textBox12
+            // txt2_giagiam
             // 
-            textBox12.Location = new Point(635, 439);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(144, 27);
-            textBox12.TabIndex = 4;
+            txt2_giagiam.BackColor = Color.White;
+            txt2_giagiam.Location = new Point(635, 439);
+            txt2_giagiam.Name = "txt2_giagiam";
+            txt2_giagiam.ReadOnly = true;
+            txt2_giagiam.Size = new Size(144, 27);
+            txt2_giagiam.TabIndex = 4;
             // 
-            // textBox13
+            // txt2_tungay
             // 
-            textBox13.Location = new Point(109, 439);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(144, 27);
-            textBox13.TabIndex = 4;
+            txt2_tungay.BackColor = Color.White;
+            txt2_tungay.Location = new Point(109, 439);
+            txt2_tungay.Name = "txt2_tungay";
+            txt2_tungay.ReadOnly = true;
+            txt2_tungay.Size = new Size(144, 27);
+            txt2_tungay.TabIndex = 4;
             // 
-            // textBox11
+            // txt2_giagoc
             // 
-            textBox11.Location = new Point(485, 439);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(144, 27);
-            textBox11.TabIndex = 4;
+            txt2_giagoc.BackColor = Color.White;
+            txt2_giagoc.Location = new Point(485, 439);
+            txt2_giagoc.Name = "txt2_giagoc";
+            txt2_giagoc.ReadOnly = true;
+            txt2_giagoc.Size = new Size(144, 27);
+            txt2_giagoc.TabIndex = 4;
             // 
-            // textBox10
+            // txt2_mucgiam
             // 
-            textBox10.Location = new Point(592, 384);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(187, 27);
-            textBox10.TabIndex = 4;
+            txt2_mucgiam.BackColor = Color.White;
+            txt2_mucgiam.Location = new Point(592, 384);
+            txt2_mucgiam.Name = "txt2_mucgiam";
+            txt2_mucgiam.ReadOnly = true;
+            txt2_mucgiam.Size = new Size(187, 27);
+            txt2_mucgiam.TabIndex = 4;
             // 
-            // textBox9
+            // txt2_chuongtrinh
             // 
-            textBox9.Location = new Point(109, 384);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(477, 27);
-            textBox9.TabIndex = 4;
+            txt2_chuongtrinh.BackColor = Color.White;
+            txt2_chuongtrinh.Location = new Point(109, 384);
+            txt2_chuongtrinh.Name = "txt2_chuongtrinh";
+            txt2_chuongtrinh.ReadOnly = true;
+            txt2_chuongtrinh.Size = new Size(477, 27);
+            txt2_chuongtrinh.TabIndex = 4;
             // 
-            // textBox8
+            // txt2_kichco
             // 
-            textBox8.Location = new Point(91, 303);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(688, 27);
-            textBox8.TabIndex = 4;
+            txt2_kichco.BackColor = Color.White;
+            txt2_kichco.Location = new Point(91, 303);
+            txt2_kichco.Name = "txt2_kichco";
+            txt2_kichco.ReadOnly = true;
+            txt2_kichco.Size = new Size(688, 27);
+            txt2_kichco.TabIndex = 4;
             // 
-            // textBox7
+            // txt2_phai
             // 
-            textBox7.Location = new Point(91, 248);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(688, 27);
-            textBox7.TabIndex = 4;
+            txt2_phai.BackColor = Color.White;
+            txt2_phai.Location = new Point(91, 248);
+            txt2_phai.Name = "txt2_phai";
+            txt2_phai.ReadOnly = true;
+            txt2_phai.Size = new Size(688, 27);
+            txt2_phai.TabIndex = 4;
             // 
-            // textBox6
+            // txt2_mausac
             // 
-            textBox6.Location = new Point(91, 198);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(688, 27);
-            textBox6.TabIndex = 4;
+            txt2_mausac.BackColor = Color.White;
+            txt2_mausac.Location = new Point(91, 198);
+            txt2_mausac.Name = "txt2_mausac";
+            txt2_mausac.ReadOnly = true;
+            txt2_mausac.Size = new Size(688, 27);
+            txt2_mausac.TabIndex = 4;
             // 
-            // textBox5
+            // txt2_hang
             // 
-            textBox5.Location = new Point(91, 146);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(688, 27);
-            textBox5.TabIndex = 4;
+            txt2_hang.BackColor = Color.White;
+            txt2_hang.Location = new Point(91, 146);
+            txt2_hang.Name = "txt2_hang";
+            txt2_hang.ReadOnly = true;
+            txt2_hang.Size = new Size(688, 27);
+            txt2_hang.TabIndex = 4;
             // 
-            // textBox4
+            // txt2_ten
             // 
-            textBox4.Location = new Point(91, 98);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(688, 27);
-            textBox4.TabIndex = 4;
+            txt2_ten.BackColor = Color.White;
+            txt2_ten.Location = new Point(91, 98);
+            txt2_ten.Name = "txt2_ten";
+            txt2_ten.ReadOnly = true;
+            txt2_ten.Size = new Size(688, 27);
+            txt2_ten.TabIndex = 4;
             // 
-            // textBox3
+            // txt2_barcode
             // 
-            textBox3.Location = new Point(91, 49);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(688, 27);
-            textBox3.TabIndex = 4;
+            txt2_barcode.BackColor = Color.White;
+            txt2_barcode.Location = new Point(91, 49);
+            txt2_barcode.Name = "txt2_barcode";
+            txt2_barcode.ReadOnly = true;
+            txt2_barcode.Size = new Size(688, 27);
+            txt2_barcode.TabIndex = 4;
             // 
             // label26
             // 
@@ -960,6 +997,7 @@
             dtg_khuyenmai.RowHeadersWidth = 51;
             dtg_khuyenmai.Size = new Size(353, 482);
             dtg_khuyenmai.TabIndex = 0;
+            dtg_khuyenmai.CellContentClick += dtg_khuyenmai_CellContentClick;
             // 
             // KhoHang
             // 
@@ -971,6 +1009,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "KhoHang";
             Text = "KhoHang";
+            Load += KhoHang_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_sanpham).EndInit();
@@ -1012,7 +1051,6 @@
         private Label label3;
         private Label label2;
         private Label label13;
-        private Label label1;
         private TextBox txt_tengiamgia;
         private TextBox txt_mucgiam;
         private ComboBox cbb_kichco;
@@ -1045,26 +1083,26 @@
         private TextBox textBox2;
         private Label label16;
         private TextBox textBox1;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox txt2_kichco;
+        private TextBox txt2_phai;
+        private TextBox txt2_hang;
+        private TextBox txt2_ten;
+        private TextBox txt2_barcode;
         private Label label21;
         private Label label20;
         private Label label19;
         private Label label18;
         private Label label17;
-        private TextBox textBox12;
-        private TextBox textBox11;
-        private TextBox textBox10;
-        private TextBox textBox9;
+        private TextBox txt2_giagiam;
+        private TextBox txt2_giagoc;
+        private TextBox txt2_mucgiam;
+        private TextBox txt2_chuongtrinh;
         private Button btn_huykhuyenmai;
         private Button btn_capnhat;
-        private TextBox textBox6;
+        private TextBox txt2_mausac;
         private Label label22;
-        private TextBox textBox14;
-        private TextBox textBox13;
+        private TextBox txt2_denngay;
+        private TextBox txt2_tungay;
         private Label label24;
         private Label label23;
         private Label label26;

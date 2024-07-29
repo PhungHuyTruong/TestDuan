@@ -17,6 +17,10 @@ public partial class HoaDon
 
     public int? IdKhachHang { get; set; }
 
+    public bool Huy { get; set; }
+
+    public bool HoanTra { get; set; }
+
     public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; } = new List<HoaDonChiTiet>();
 
     public virtual KhachHang? IdKhachHangNavigation { get; set; }

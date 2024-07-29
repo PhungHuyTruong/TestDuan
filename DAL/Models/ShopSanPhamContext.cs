@@ -49,6 +49,8 @@ public partial class ShopSanPhamContext : DbContext
         {
             entity.HasKey(e => e.IdGiamGia).HasName("PK__GiamGia__E0F7D8B6A9CC47C1");
 
+            entity.ToTable(tb => tb.HasTrigger("trg_UpdateTrangThaiOnExpiry"));
+
             entity.HasIndex(e => e.LoaiGiamGia, "UQ__GiamGia__F08A19A72DEFF21C").IsUnique();
 
             entity.Property(e => e.LoaiGiamGia).HasMaxLength(50);
@@ -75,10 +77,9 @@ public partial class ShopSanPhamContext : DbContext
             entity.ToTable("GioHangChiTiet");
 
             entity.Property(e => e.DonGia).HasColumnType("decimal(12, 0)");
+            entity.Property(e => e.GiamGia).HasColumnType("decimal(5, 0)");
             entity.Property(e => e.TenSanPham).HasMaxLength(250);
-            entity.Property(e => e.ThanhTien)
-                .HasComputedColumnSql("([SoLuong]*[DonGia])", true)
-                .HasColumnType("decimal(23, 0)");
+            entity.Property(e => e.ThanhTien).HasColumnType("decimal(14, 0)");
 
             entity.HasOne(d => d.IdGioHangNavigation).WithMany(p => p.GioHangChiTiets)
                 .HasForeignKey(d => d.IdGioHang)
@@ -143,10 +144,9 @@ public partial class ShopSanPhamContext : DbContext
             entity.ToTable("HoaDonChiTiet");
 
             entity.Property(e => e.DonGia).HasColumnType("decimal(12, 0)");
+            entity.Property(e => e.GiamGia).HasColumnType("decimal(5, 0)");
             entity.Property(e => e.TenSanPham).HasMaxLength(250);
-            entity.Property(e => e.ThanhTien)
-                .HasComputedColumnSql("([SoLuong]*[DonGia])", true)
-                .HasColumnType("decimal(23, 0)");
+            entity.Property(e => e.ThanhTien).HasColumnType("decimal(14, 0)");
 
             entity.HasOne(d => d.IdHoaDonNavigation).WithMany(p => p.HoaDonChiTiets)
                 .HasForeignKey(d => d.IdHoaDon)
@@ -164,6 +164,10 @@ public partial class ShopSanPhamContext : DbContext
             entity.HasKey(e => e.IdKhachHang).HasName("PK__KhachHan__7CF5D8366C9863B8");
 
             entity.ToTable("KhachHang");
+
+            entity.HasIndex(e => e.Email, "UQ_KhachHang_Email").IsUnique();
+
+            entity.HasIndex(e => e.SoDienThoai, "UQ_KhachHang_SoDienThoai").IsUnique();
 
             entity.Property(e => e.DiaChi).HasMaxLength(100);
             entity.Property(e => e.Email)
@@ -230,6 +234,7 @@ public partial class ShopSanPhamContext : DbContext
             entity.Property(e => e.RoleId)
                 .HasMaxLength(10)
                 .HasColumnName("RoleID");
+            entity.Property(e => e.TrangThai).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<SanPham>(entity =>
