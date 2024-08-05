@@ -4112,11 +4112,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\DUANcopy\\DuAnShop\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\DUANcopy - Copy\\DuAnShop\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\Lenovo\\Desktop\\DUANcopy\\DuAnShop\\DAL\\DAL.csproj",
+      "projectPath": "C:\\Users\\Lenovo\\Desktop\\DUANcopy - Copy\\DuAnShop\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\Desktop\\DUANcopy\\DuAnShop\\DAL\\obj\\",
+      "outputPath": "C:\\Users\\Lenovo\\Desktop\\DUANcopy - Copy\\DuAnShop\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
