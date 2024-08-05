@@ -101,7 +101,8 @@ namespace GUI
 
         private void btn_thuoctinh_Click(object sender, EventArgs e)
         {
-
+            var thuocTinh = _serviceProvider.GetRequiredService<ThuocTinh>();
+            ShowFormInPanel(thuocTinh);
         }
         private void btn_formkhachhang_Click(object sender, EventArgs e)
         {

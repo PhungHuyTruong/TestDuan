@@ -33,7 +33,7 @@ namespace GUI
         private static void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ShopSanPhamContext>(options =>
-                options.UseSqlServer("Server=ANHDUC;Database=ShopSanPham;Trusted_Connection=True;TrustServerCertificate=true"));
+                options.UseSqlServer("Server=PHUNGHUYTRUONG\\SQLEXPRESS;Database=ShopSanPham;Trusted_Connection=True;TrustServerCertificate=true"));
 
             services.AddScoped<IQuanLyDangNhap,QuanLyDangNhap>();
             services.AddScoped<IChucNangDangNhap, ChucNangDangNhap>();
@@ -45,6 +45,10 @@ namespace GUI
             services.AddScoped<IChucNangGiaoDich,ChucNangGiaoDich>();
             services.AddScoped<IQuanLyKhachHang, QuanLyKhachHang>();
             services.AddScoped<IChucNangKhachHang, ChucNangKhachHang>();
+            services.AddScoped<IQuanLyThuocTinh, QuanLyThuocTinh>();
+            services.AddScoped<IChucNangThuocTinh, ChucNangThuocTinh>();
+            services.AddScoped<IQuanLyThongKe, QuanLyThongKe>();
+            services.AddScoped<IChucNangThongKe, ChucNangThongKe>();
 
             // Register forms
             services.AddScoped<Mainform>();
@@ -54,6 +58,12 @@ namespace GUI
             services.AddTransient<KhoHang>();
             services.AddTransient<GiaoDich>();
             services.AddTransient<BangKhachHang>();
+            services.AddTransient<GiamGia1>();
+            services.AddTransient<GioiTinh2>();
+            services.AddTransient<Hang>();
+            services.AddTransient<MauSac2>();
+            services.AddTransient<KichCo2>();
+            services.AddTransient<ThuocTinh>();
         }
     }
 }
